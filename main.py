@@ -59,7 +59,7 @@ class RepeatedTimer(object):
 
 @app.on_event("startup")
 async def startup_db_client():
-    app.mongodb_client = AsyncIOMotorClient('mongodb://localhost:27017')
+    app.mongodb_client = AsyncIOMotorClient('mongodb+srv://Shravan:<password>@cluster0.imu4edv.mongodb.net/?retryWrites=true&w=majority')
     app.mongodb = app.mongodb_client['sih_db_new']
 
 
