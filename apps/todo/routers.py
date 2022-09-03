@@ -9,6 +9,7 @@ from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 from bson.json_util import ObjectId
 from apps.TextAnalysis.TextPredict import textAnalysis
+from apps.scrapeR.Scrape import scraperThread
 from .models import TaskModel, UpdateTaskModel
 from apps.pymongoClient.mongoClient import client
 from apps.scrapeR.Scrape import scrapeTwitter , CrawlWeb
@@ -36,6 +37,10 @@ async def list_tasks(request: Request):
     # pos= client.sih_db_new.ArticalScraped.find()
     # df = pd.DataFrame(list(pos)).to_dict("records")
     # return df
+@router.get("/ScrapeTask", response_description="Scrape")
+async def list_tasks(request: Request):
+    scraperThread()
+    return "Scraping Started"
 
 @router.post("/predicttext", response_description="Predict and Return")
 async def create_task(request: Request, text:str = Body(..., embed=True)):
