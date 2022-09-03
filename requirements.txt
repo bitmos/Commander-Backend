@@ -118,7 +118,6 @@ toml==0.10.1
 tqdm==4.64.0
 transformers==4.17.0
 twint @ git+https://github.com/twintproject/twint.git@e7c8a0c764f6879188e5c21e25fb6f1f856a7221
-typed-ast==1.4.1
 typing-extensions==3.7.4.3
 urllib3==1.26.12
 uvicorn==0.12.2
